@@ -64,7 +64,7 @@ It investigates whether the most expensive bowlers consistently deliver higher w
 """, unsafe_allow_html=True)
 
 # ---- Dashboard Image ----
-st.image("assets/bowler_dashboard.png", caption="Dashboard: Auction Price vs Bowler Performance", use_column_width=True)
+st.image("assets/bowler_dashboard.png", caption="Dashboard: Auction Price vs Bowler Performance")
 
 # ---- Insights ----
 st.markdown("""
