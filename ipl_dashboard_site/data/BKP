@@ -1,0 +1,252 @@
+####Main
+import streamlit as st
+from PIL import Image
+import base64
+# Define tabbed interface
+tab1, tab2, tab3 = st.tabs(["🧢 Batsmen Analysis", "📈 IPL Financial Growth", "📋 About Project"])
+
+# ========== TAB 1 ==========
+with tab1:
+    st.subheader("🧢 Do the Most Expensive Batsmen Deliver Every Season?")
+    st.image(batsmen_img, use_column_width=True)
+
+    st.markdown("""
+    ### 🔍 Key Insights:
+    - **High-priced players** like Rishabh Pant and Shreyas Iyer topped auction charts.
+    - **No strong correlation** found between price and performance — some mid/low-priced players outperform.
+    - **Performance clusters** show value-for-money opportunities for teams.
+    - Rising player prices since 2018 reflect IPL’s commercialization, not always performance merit.
+    """)
+
+# ========== TAB 2 ==========
+with tab2:
+    st.subheader("📈 IPL Financial & Social Media Growth (Coming Soon)")
+    st.info("Financial dashboard and media engagement insights will be added here.")
+    st.markdown("""
+    - 📺 **Media Rights Revenue** (2008–2024)
+    - 🌐 **YouTube Subscriber Trends**
+    - 💵 **Estimated Earnings by Team**
+    """)
+
+# ========== TAB 3 ==========
+with tab3:
+    st.subheader("📋 About the Project")
+    st.markdown("""
+    This is part of a **Master's Dissertation** in Data Analytics at Oxford Brookes University by **Mukul Katkar**.
+
+    - 🔍 **Focus**: Price-performance mismatch in IPL & growth of digital engagement
+    - 📊 Tools Used: Python, Power BI, Streamlit
+    - 📚 Supervisor: Tereza Wolf-Jackson
+    - 🎯 Goal: Blend statistical insight with sports storytelling
+
+    For full documentation, contact: 19310486@brookes.ac.uk
+    """)
+
+# Load your favicon/logo
+logo = Image.open("assets/ipl_logo_favicon.ico")
+
+st.set_page_config(
+    page_title="IPL Data Storytelling",
+    page_icon=logo,
+    layout="wide"
+)
+
+
+def get_base64(file_path):
+    with open(file_path, "rb") as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+background_image = get_base64("assets/ipl_background_blur.jpg")
+# Custom background
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url("data:image/jpeg;base64,{background_image}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }}
+
+    .stApp::before {{
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Header
+st.markdown("<h1 class='main-title'>Beyond the Price Tag: IPL’s Rise & the Myth of Expensive Players</h1>", unsafe_allow_html=True)
+
+
+# --- Intro Narrative ---
+st.markdown("### 🎯 Project Objective")
+st.write("""
+This project explores two questions:
+1. **Do the most expensive IPL players consistently deliver top performance?**
+2. **How did IPL evolve into a multi-billion-dollar global sports league?**
+
+By combining auction prices, player performance, media rights, and social media engagement, we’ve created interactive dashboards that reveal the truth behind the numbers.
+""")
+
+# --- Navigation ---
+st.markdown("### 🧭 What You’ll Explore in This Website")
+
+cols = st.columns(3)
+cols[0].info("**💸 Dashboard 1:** Price vs Performance\n\nCompare auction cost vs player output.")
+cols[1].success("**📈 Dashboard 2:** IPL Growth Story\n\nExplore business trends, media rights, and YouTube stats.")
+cols[2].warning("**📝 Project Overview:** Objectives, methods, tools, and research questions.")
+
+# --- Research Questions ---
+st.markdown("### 📌 Research Questions")
+st.write("""
+- Is there a **misalignment between auction hype and performance?**
+- Who are the **best value-for-money players** across seasons?
+- How has IPL used **digital fan engagement** and **media rights** to grow revenue?
+""")
+
+# --- Tools Used ---
+st.markdown("### 🛠 Tools & Technologies Used")
+st.markdown("""
+- **Power BI** for dashboard development and visual analytics
+- **Python (Pandas, NumPy)** for cleaning and transformation
+- **Streamlit** for this interactive website
+""")
+
+# --- Literature Reference Tie-in ---
+st.markdown("### 📚 Based on Literature")
+st.write("""
+This project follows the data storytelling principles outlined by **Dykes (2020)**, with visualization strategies based on **Perin et al. (2018)** and narrative structure inspired by **Ojo & Heravi (2018)**. It connects business, media, and sports data into one integrated story.
+""")
+
+# --- Feedback Form Link ---
+st.markdown("### 📩 We’d Love Your Feedback!")
+st.markdown("👉 [Click here to complete the short feedback form](https://forms.gle/your-google-form-link)")
+
+# --- Footer ---
+st.markdown(
+    """
+    <div class="footer">
+        <b>Mukul Katkar</b> | MSc Data Analytics | Oxford Brookes University <br>
+        Supervisor: Tereza Wolf-Jackson (<a href="mailto:tmalacova@brookes.ac.uk">tmalacova@brookes.ac.uk</a>)
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+
+#####bat
+
+import streamlit as st
+import base64
+from PIL import Image
+
+from app import get_base64
+
+# Load your favicon/logo
+logo = Image.open("assets/ipl_logo_favicon.ico")
+
+st.set_page_config(
+    page_title="IPL Data Storytelling",
+    page_icon=logo,
+    layout="wide"
+)
+
+background_image = get_base64("assets/ipl_background_blur.jpg")
+# Custom background
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url("data:image/jpeg;base64,{background_image}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }}
+
+    .stApp::before {{
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+st.markdown("<h1 class='main-title'>Batsmen: Price vs Performance</h1>", unsafe_allow_html=True)
+# Title and intro
+
+
+st.markdown("""
+This dashboard analyzes the **relationship between auction prices and batting performance** in the Indian Premier League (IPL) from **2008 to 2024**. It challenges the assumption that the most expensive players are always the top performers.
+""")
+
+# Show the dashboard image
+st.image("assets/batsman_dashboard.png", caption="Dashboard: Auction Price vs Batsman Performance", use_column_width=True)
+
+# Detailed Insights
+st.subheader("🔍 Key Insights & Narrative")
+
+st.markdown("""
+### 💰 Top 5 Most Expensive Batsmen
+- **Rishabh Pant** and **Shreyas Iyer** lead the list with prices of ₹27 Cr each.
+- **Yuvraj Singh**, **Nicholas Pooran**, and **Jos Buttler** also feature among the costliest.
+- While some deliver consistently, others underperform relative to their price.
+
+---
+
+### 📉 Auction Price vs Runs (Scatter Plot)
+- The scatter plot shows a **negative correlation** between price and runs for many players.
+- This suggests **expensive players don’t always score more**.
+- A cluster of **low-to-mid priced players consistently achieve decent runs**, offering better value-for-money.
+
+---
+
+### 📈 Price Change by Season
+- A clear trend of **rising player prices** over the years, especially post-2018.
+- Reflects the IPL's growing commercial strength and competitive bidding.
+
+---
+
+### 📊 Price Distribution by Player Category
+- Players categorized as **Elite, High, Mid, Low**.
+- **Elite and High** categories consume most of the total spend, but do not always correlate with highest outputs.
+
+---
+
+### 📋 Player Table (Top Value Players)
+- Some players like **Sam Curran** and **Pat Cummins** have **modest prices but reasonable output**.
+- Helps identify **undervalued players** – key for franchise strategy.
+
+---
+
+### 🧠 Insight Summary
+> **“Expensive doesn’t always mean effective.”**
+> The analysis uncovers a **misalignment** between auction hype and actual output.
+> This opens up questions about ROI, scouting strategy, and value metrics in IPL auctions.
+
+""")
+
+# Optional call to action or navigation
+st.markdown("⬅️ Use the sidebar to explore bowlers and IPL's financial growth in other sections.")
