@@ -20,6 +20,8 @@ st.markdown("""
 
 st.markdown(
     f"""
+    <h1 style='color:#808080; text-align:center;'>
+       
     <style>
     .stApp {{
         background-image: url("data:image/jpeg;base64,{background_image}");
