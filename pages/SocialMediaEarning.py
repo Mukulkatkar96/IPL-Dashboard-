@@ -62,7 +62,7 @@ st.markdown(
 st.markdown("<h1 class='main-title'>IPL Teams on YouTube: Earnings & Engagement (Last 30 Days)</h1>", unsafe_allow_html=True)
 
 # ---- Dashboard Image ----
-st.image("assets/SocialMedia.png", caption="Dashboard: Team-wise YouTube Performance & Earnings (30 Days)", use_column_width=True)
+st.image("assets/SocialMedia.png", caption="Dashboard: Team-wise YouTube Performance & Earnings (30 Days)")
 
 # ---- Button to Open Full Dashboard ----
 st.markdown(
