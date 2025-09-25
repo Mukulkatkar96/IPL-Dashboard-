@@ -64,7 +64,7 @@ It challenges the assumption that the most expensive players are always the top 
 """, unsafe_allow_html=True)
 
 # ---- Dashboard Image ----
-st.image("assets/batsman_dashboard.png", caption="Dashboard: Auction Price vs Batsman Performance", use_column_width=True)
+st.image("assets/batsman_dashboard.png", caption="Dashboard: Auction Price vs Batsman Performance")
 
 # ---- Button to Open Full Dashboard ----
 st.markdown(
