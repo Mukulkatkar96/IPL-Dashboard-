@@ -4,7 +4,7 @@ from app import get_base64
 
 # ---- Page Config ----
 logo = Image.open("assets/ipl_logo_favicon.ico")
-st.set_page_config(page_title="Batsmen: Price vs Performance", page_icon=logo, layout="wide",style='color: grey;)
+st.set_page_config(page_title="Batsmen: Price vs Performance", page_icon=logo, layout="wide")
 
 # ---- Load Background ----
 background_image = get_base64("assets/ipl_background_blur.jpg")
